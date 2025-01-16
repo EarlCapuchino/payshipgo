@@ -1,0 +1,168 @@
+.pricing {
+    font-family: var(--font-secondary);
+    color: var(--color-primary);
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-side);
+    padding-top:var(--header-height);
+  }
+  .introSection{
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+      padding-top:var(--header-height);
+  }
+  .introSection h2{
+          font-size: 2rem;
+      margin-bottom: var(--spacing-sm);
+        color: var(--color-primary);
+          font-family: var(--font-primary);
+  }
+  .introSection p{
+      margin-bottom: var(--spacing-sm);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  
+  .tiersContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+      margin-bottom: var(--spacing-xl);
+  }
+  
+  .tierCard {
+    border: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+    background-color: #ffffff;
+  }
+  .tierCard:hover{
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .tierHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .tierIcon {
+    font-size: 2rem;
+    margin-right: var(--spacing-sm);
+      color: var(--color-primary)
+  }
+  
+  .tierCard h2 {
+    font-size: 1.75rem;
+    color: var(--color-primary);
+      font-family: var(--font-primary);
+  }
+  .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: var(--spacing-sm) 0;
+      color: var(--color-primary);
+  }
+  .featureTable{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+  }
+  .featureTable h3 {
+    font-size: 1.25rem;
+      margin-bottom: var(--spacing-xs);
+    color: var(--color-primary);
+      font-family: var(--font-primary);
+  }
+  
+  .featureTable ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-sm);
+    flex: 1;
+  }
+  
+  .featureTable li {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-primary);
+  }
+  .checkIcon {
+    font-size: 1rem;
+    color: #28a745;
+    margin-right: var(--spacing-xs);
+  }
+  .getQuoteButtonContainer{
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--spacing-xl);
+  }
+  .getQuoteButton {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 12px 20px;
+      text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 4px;
+      border: none;
+  }
+  
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: var(--spacing-md);
+      border: 1px solid #ddd;
+    border-radius: 8px;
+      width: 400px;
+  }
+  .modalContent h2 {
+    font-size: 1.5rem;
+        color: var(--color-primary);
+          font-family: var(--font-primary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .modalButtonGroup {
+    display: flex;
+      justify-content: flex-end;
+  }
+  .modalCloseButton{
+    background-color: transparent;
+    border: none;
+      cursor: pointer;
+    margin-left: var(--spacing-sm);
+  }
+  
+  .footer {
+      margin-top: auto;
+    padding: var(--spacing-sm);
+    text-align: center;
+      background-color: #f0f0f0;
+      border-top: 1px solid #ddd;
+  }
+  
+  @media (max-width: 768px) {
+    .tierCard h2 {
+      font-size: 1.5rem;
+    }
+      .introSection h2{
+          font-size: 1.75rem;
+      }
+    .tiersContainer {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+      .modalContent {
+          width: 90%;
+      }
+  }

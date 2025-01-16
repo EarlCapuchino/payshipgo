@@ -1,0 +1,298 @@
+.services {
+    padding: var(--spacing-side);
+    padding-top:var(--header-height);
+  }
+  
+  .section {
+    margin-bottom: var(--spacing-xl);
+    padding-top:var(--header-height);
+  }
+  
+  .section h2 {
+    font-family: var(--font-primary);
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+  }
+  
+  /* Gateway and Shipping Cards Grid */
+  .gatewayGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+  
+  .gatewayCard {
+    background: white;
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .gatewayCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .imageWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-md);
+  }
+  
+  .gatewayImage {
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  
+  .gatewayCard h3 {
+    font-family: var(--font-primary);
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    margin: var(--spacing-sm) 0;
+    text-align: center;
+  }
+  
+  .gatewayContent {
+    flex: 1;
+  }
+  
+  .gatewayContent h4 {
+    color: var(--color-secondary);
+    margin: var(--spacing-sm) 0;
+    font-size: 1.1rem;
+  }
+  
+  .gatewayContent ul {
+    list-style: none;
+    padding-left: var(--spacing-sm);
+  }
+  
+  .gatewayContent li {
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    padding-left: var(--spacing-md);
+  }
+  
+  .gatewayContent li::before {
+    content: "•";
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+  }
+  
+  /* API Services Grid */
+  .apiGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .apiTitle{
+    display: flex;
+    gap: var(--spacing-sm);
+    font-weight: bold;
+    padding-bottom: var(--spacing-sm);
+  }
+  
+  .apiCard {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    gap: var(--spacing-sm);
+    transition: transform 0.2s ease;
+  }
+  
+  .apiCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .apiIcon {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  /* Integration Timeline */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .timelineItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+  
+  .timelineContent {
+    flex: 1;
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .timelineContent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .timelineContent h3 {
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+    font-family: var(--font-primary);
+  }
+  
+  .timelineContent ul {
+    list-style: none;
+    padding-left: var(--spacing-sm);
+  }
+  
+  .timelineContent li {
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    padding-left: var(--spacing-md);
+    color: var(--color-primary);
+  }
+  
+  .timelineContent li::before {
+    content: "→";
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+  }
+  
+  .timelineArrow {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .services {
+      padding: var(--spacing-side);
+      padding-top:var(--header-height);
+    }
+  
+    .section h2 {
+      font-size: 2rem;
+    }
+  
+    .timelineItem {
+      flex-direction: column;
+    }
+  
+    .timelineArrow {
+      transform: rotate(90deg);
+    }
+    
+    .gatewayGrid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .services {
+      padding: var(--spacing-side);
+      padding-top:var(--header-height);
+    }
+  
+    .section h2 {
+      font-size: 1.75rem;
+    }
+  
+    .gatewayCard {
+      padding: var(--spacing-sm);
+    }
+  
+    .apiGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .imageWrapper {
+      padding: var(--spacing-sm);
+    }
+    
+    .gatewayContent h4 {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .services {
+      padding: var(--spacing-side);
+      padding-top:var(--header-height);
+    }
+  
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-md);
+    }
+  
+    .gatewayContent h4 {
+      font-size: 1rem;
+    }
+  
+    .gatewayContent li {
+      font-size: 0.9rem;
+    }
+  
+    .timelineContent h3 {
+      font-size: 1.1rem;
+    }
+  
+    .timelineContent li {
+      font-size: 0.9rem;
+    }
+  
+    .apiCard {
+      padding: var(--spacing-sm);
+    }
+  
+    .apiCard p {
+      font-size: 0.9rem;
+    }
+    
+    .gatewayGrid {
+      gap: var(--spacing-md);
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    .services {
+      padding: 0;
+    }
+  
+    .gatewayCard,
+    .apiCard,
+    .timelineContent {
+      box-shadow: none;
+      border: 1px solid #ddd;
+    }
+  
+    .gatewayCard:hover,
+    .apiCard:hover,
+    .timelineContent:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
