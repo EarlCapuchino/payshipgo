@@ -112,7 +112,7 @@ const Support = () => {
         </div>
         <div>
           <FaEnvelope className={styles.contactIcon} />
-          <span>Email: payshipgo.support@gmail.com</span>
+          <span>Email: payshipgo@gmail.com</span>
         </div>
       </div>
 

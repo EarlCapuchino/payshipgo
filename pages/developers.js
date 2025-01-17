@@ -1179,19 +1179,6 @@ const Developers = () => {
           <SyntaxHighlighter language={selectedLanguage} style={isIdeDark ? vscDarkPlus : vs} className={styles.codeBlock}>
                 {codeExamples[selectedLanguage]}
            </SyntaxHighlighter>
-
-          <div className={styles.buttonGroup}>
-            <button className={styles.executeButton} onClick={() => executeCode('payment')}>Execute Payment Code</button>
-            <button className={styles.executeButton} onClick={() => executeCode('shipping')}>Execute Shipping Code</button>
-          </div>
-       {response && (
-           <div className={styles.responseContainer}>
-              <h4>Response:</h4>
-               <SyntaxHighlighter language="json" style={isIdeDark ? vscDarkPlus : vs} className={styles.codeBlock}>
-                {response}
-              </SyntaxHighlighter>
-            </div>
-        )}
     </div>
     </section>
      <section className={styles.apiSection}>

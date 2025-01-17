@@ -17,7 +17,7 @@ const Footer = () => {
           </div>
            <div className={styles.email}>
              <FaEnvelope className={styles.icon} />
-              <span>payshipgo.support@gmail.com</span>
+              <span>payshipgo@gmail.com</span>
            </div>
          </div>
          <div className={styles.copyright}>
