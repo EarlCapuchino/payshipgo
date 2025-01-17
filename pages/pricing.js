@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import styles from '../styles/Pricing.module.css';
 import { FaCheck, FaRocket, FaBriefcase, FaBuilding, FaEnvelope, FaTimes } from 'react-icons/fa';
-
+import Head from 'next/head';
 // Material UI imports
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -156,6 +156,12 @@ const Pricing = () => {
     }
 
   return (
+      <>
+        <Head>
+          <link rel="icon" href="images/logo.png" />
+          <title>Pricing - PayShipGo</title>
+          <meta name="description" content="Streamline your business with PayShipGo's integrated payment and shipping solutions." />
+        </Head>
       <div className={styles.pricing}>
       <section className={styles.introSection}>
           <h2>Find the Perfect Plan for Your Business</h2>
@@ -244,7 +250,7 @@ const Pricing = () => {
               </div>
            </Modal>
     </div>
-  );
+  </>);
 };
 
 export default Pricing;

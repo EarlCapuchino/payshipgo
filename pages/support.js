@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../styles/Support.module.css';
 import { FaMobileAlt, FaEnvelope, FaTimes } from 'react-icons/fa';
-
+import Head from 'next/head';
 // Material UI imports
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -90,6 +90,12 @@ const Support = () => {
 
 
   return (
+    <>
+    <Head>
+        <link rel="icon" href="images/logo.png" />
+        <title>Support - PayShipGo</title>
+        <meta name="description" content="Streamline your business with PayShipGo's integrated payment and shipping solutions." />
+    </Head>
     <div className={styles.support}>
         <section className={styles.introSection}>
              <h2>We Value Your Concerns</h2>
@@ -185,7 +191,7 @@ const Support = () => {
               </div>
            </Modal>
     </div>
-  );
+  </>);
 };
 
 export default Support;

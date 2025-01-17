@@ -7,6 +7,7 @@ export default function Home() {
     return (
         <>
             <Head>
+                <link rel="icon" href="images/logo.png" />
                 <title>PayShipGo - Integrated Payment and Shipping Solutions</title>
                 <meta name="description" content="Streamline your business with PayShipGo's integrated payment and shipping solutions." />
             </Head>

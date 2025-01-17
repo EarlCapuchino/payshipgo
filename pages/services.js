@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from '../styles/Services.module.css';
 import { FaArrowRight, FaCheckCircle } from 'react-icons/fa';
-
+import Head from 'next/head';
 export default function Services() {
   const paymentGateways = [
     {
@@ -288,6 +288,12 @@ export default function Services() {
   ];
 
   return (
+    <>
+     <Head>
+          <link rel="icon" href="images/logo.png" />
+          <title>Services - PayShipGo</title>
+          <meta name="description" content="Streamline your business with PayShipGo's integrated payment and shipping solutions." />
+      </Head>
     <div className={styles.services}>
       <section className={styles.section}>
         <h2>Payment Gateway Integration</h2>
@@ -408,5 +414,5 @@ export default function Services() {
         </div>
       </section>
     </div>
-  );
+  </>);
 }

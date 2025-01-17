@@ -3,6 +3,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus, vs } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { FaSun, FaMoon, FaJs, FaPython, FaPhp } from 'react-icons/fa';
 import styles from '../styles/Developers.module.css';
+import Head from 'next/head';
 
 // Material UI imports
 import Card from '@mui/material/Card';
@@ -1022,6 +1023,12 @@ const Developers = () => {
         }
     };
     return (
+      <>
+        <Head>
+          <link rel="icon" href="images/logo.png" />
+          <title>Developers - PayShipGo</title>
+          <meta name="description" content="Streamline your business with PayShipGo's integrated payment and shipping solutions." />
+        </Head>
         <div className={styles.developers}>
             <div className={styles.header}>
                 <h1>PayShipGo API Documentation</h1>
@@ -1202,7 +1209,7 @@ const Developers = () => {
      </section>
  </div>
   </div>
- );
+ </>);
 };
 
 export default Developers;
