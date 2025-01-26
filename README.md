@@ -35,94 +35,98 @@ PayShipGo was a challenging yet rewarding project, encompassing the integration 
 The following code snippets showcase some of the implementation techniques used within the project, demonstrating how various components worked without sharing the sensitive business information of the whole application. They focus on the UI aspect of the project.
 
 *   **Interactive UI Component:** Shows the implementation of an interactive component for filtering or sorting data.
-
-    ```javascript
-   //Example: Interactive UI Component
-   import React, { useState } from 'react';
+    
+    ```html
+    <!-- Example: Interactive UI Component -->
+    <pre><code class="language-javascript">
+    import React, { useState } from 'react';
 
     function FilterableList({ items }) {
-    const [filterText, setFilterText] = useState('');
-    const filteredItems = items.filter(item =>
-     item.name.toLowerCase().includes(filterText.toLowerCase())
-     );
+        const [filterText, setFilterText] = useState('');
+        const filteredItems = items.filter(item =>
+            item.name.toLowerCase().includes(filterText.toLowerCase())
+        );
 
-    return (
-      <div>
-       <input
-          type="text"
-          placeholder="Search by name"
-          value={filterText}
-         onChange={(e) => setFilterText(e.target.value)}
-        />
-       <ul>
-         {filteredItems.map(item => (
-          <li key={item.id}>{item.name}</li>
-          ))}
-        </ul>
-      </div>
-      );
-   }
+        return (
+            <div>
+                <input
+                    type="text"
+                    placeholder="Search by name"
+                    value={filterText}
+                    onChange={(e) => setFilterText(e.target.value)}
+                />
+                <ul>
+                {filteredItems.map(item => (
+                <li key={item.id}>{item.name}</li>
+                ))}
+                </ul>
+            </div>
+        );
+    }
     export default FilterableList;
+    </code></pre>
     ```
 
 *   **Dynamic Data Loading:**  Demonstrates the handling of asynchronous data loading and rendering in the user interface.
 
-    ```javascript
-    // Example: Dynamic Data Loading
-   import React, { useState, useEffect } from 'react';
+    ```html
+    <!-- Example: Dynamic Data Loading -->
+    <pre><code class="language-javascript">
+    import React, { useState, useEffect } from 'react';
 
-   function DynamicDataLoader() {
-     const [data, setData] = useState(null);
-     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    function DynamicDataLoader() {
+        const [data, setData] = useState(null);
+        const [loading, setLoading] = useState(true);
+        const [error, setError] = useState(null);
 
-     useEffect(() => {
-       //Simulate API Fetching
-        const fetchData = async () => {
-        setLoading(true);
-      try{
-         const result = {
-           status:200,
-           data : [
-             { id: 1, name: 'Item A' },
-             { id: 2, name: 'Item B' },
-           ]
-         }
-           if (result.status === 200){
-           setData(result.data)
-         } else {
-          throw new Error('Error getting data')
-         }
-        } catch (err) {
-         setError(err.message)
-        } finally {
-           setLoading(false)
-       }
-      }
-        fetchData();
-     }, []);
-
-       if(loading){
-        return <p>Loading ... </p>
+        useEffect(() => {
+            //Simulate API Fetching
+            const fetchData = async () => {
+            setLoading(true);
+            try{
+                const result = {
+                status:200,
+                data : [
+                    { id: 1, name: 'Item A' },
+                    { id: 2, name: 'Item B' },
+                ]
+                }
+                if (result.status === 200){
+                setData(result.data)
+                } else {
+                throw new Error('Error getting data')
+                }
+            } catch (err) {
+                setError(err.message)
+            } finally {
+                setLoading(false)
+            }
+            }
+            fetchData();
+        }, []);
+            
+        if (loading) {
+            return <p>Loading...</p>;
         }
 
-      if (error) {
-        return <p>Error: {error}</p>
+        if (error) {
+        return <p>Error: {error}</p>;
         }
 
-    return (
-      <div>
-          {data && (
-        <ul>
-           {data.map(item => (
-               <li key={item.id}>{item.name}</li>
-              ))}
+        return (
+        <div>
+            {data ? (
+            <ul>
+                {data.map(item => (
+                <li key={item.id}>{item.name}</li>
+                ))}
             </ul>
-          )}
-        </div>
-      );
+            ) : null}
+            </div>
+        );
     }
     export default DynamicDataLoader;
+    </code></pre>
     ```
 
 **Important Considerations:**
